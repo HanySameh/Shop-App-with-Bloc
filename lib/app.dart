@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'business_logics/bloc/cart/cart_bloc.dart';
 import 'business_logics/cubit/color_option_cubit/color_selector_cubit.dart';
 import 'presentation/route_management/router.dart';
 import 'presentation/utilities/colors.dart';
@@ -17,6 +18,9 @@ class MyApp extends StatelessWidget {
           providers: [
             BlocProvider<ColorSelectorCubit>(
               create: (context) => ColorSelectorCubit(),
+            ),
+            BlocProvider<CartBloc>(
+              create: (context) => CartBloc(),
             ),
           ],
           child: MediaQuery(

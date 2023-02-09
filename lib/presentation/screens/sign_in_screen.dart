@@ -199,7 +199,14 @@ class SignInScreen extends StatelessWidget {
                   return CustomButton(
                     isLoading: state.isLoading,
                     buttonText: "Sign In",
-                    onButtonPressed: () => signInBloc.add(SignInButtonEvent()),
+                    onButtonPressed: () {
+                      signInBloc.add(SignInButtonEvent());
+                      Navigator.pushNamedAndRemoveUntil(
+                        context,
+                        RouteNames.kHomeScreenRoute,
+                        (page) => false,
+                      );
+                    },
                   );
                 },
               ),
